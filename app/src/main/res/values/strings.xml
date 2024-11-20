@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">DAM_UC3_Fernandez</string>
+    <string name="Vuelos">Buscar Vuelos</string>
+    <string name="Vuelo">Vuelos</string>
+    <string name="Hoteles">Hoteles</string>
+    <string name="Asistencia">Asistencia</string>
+    <string name="Autos">Autos</string>
+    <string name="Paquetes">Paquetes</string>
+    <string-array name="clase_servicio_options">
+        <item>Economico</item>
+        <item>Economico Premium</item>
+        <item>Premium Business</item>
+    </string-array>
 </resources>

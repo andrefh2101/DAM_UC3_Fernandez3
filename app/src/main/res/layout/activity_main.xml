@@ -1,19 +1,299 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#26235F"
     tools:context=".MainActivity">
 
+    <!-- Título -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:gravity="start"
+        android:padding="16dp"
+        android:text="Comprar"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Tabs -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/tab_vuelos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/Vuelo"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center_vertical|start"
+                android:drawableStart="@drawable/ic_vuelo"
+                android:drawablePadding="8dp" />
+
+            <Button
+                android:id="@+id/tab_paquetes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/Paquetes"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center_vertical|start"
+                android:drawableStart="@drawable/ic_paquetes"
+                android:drawablePadding="8dp" />
+
+            <Button
+                android:id="@+id/tab_hoteles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/Hoteles"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center_vertical|start"
+                android:drawableStart="@drawable/ic_hoteles"
+                android:drawablePadding="8dp" />
+
+            <Button
+                android:id="@+id/tab_autos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/Autos"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center_vertical|start"
+                android:drawableStart="@drawable/carro"
+                android:drawablePadding="8dp" />
+
+            <Button
+                android:id="@+id/tab_asistencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/Asistencia"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:gravity="center_vertical|start"
+                android:drawableStart="@drawable/ic_asistencia"
+                android:drawablePadding="8dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <!-- Formulario -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:layout_margin="8dp">
+
+            <!-- Campos de entrada -->
+            <EditText
+                android:id="@+id/origen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Origen"
+                android:drawableStart="@drawable/ic_airplane1"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <EditText
+                android:id="@+id/destino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Destino"
+                android:drawableStart="@drawable/ic_airplane2"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edittext" />
+
+            <!-- Fechas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/data_ida"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_calendar"
+                    android:hint="Ida"
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_edittext" />
+
+                <EditText
+                    android:id="@+id/data_volta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_calendar"
+                    android:hint="Vuelta"
+                    android:padding="12dp"
+                    android:background="@drawable/rounded_edittext" />
+            </LinearLayout>
+
+            <!-- Clase de servicio -->
+            <Spinner
+                android:id="@+id/clase_servicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_edittext"
+                android:entries="@array/clase_servicio_options" />
+
+            <!-- Pasajeros -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/adultos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Adultos"
+                    android:background="@drawable/rounded_edittext" />
+
+                <EditText
+                    android:id="@+id/ninos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:hint="Niños"
+                    android:background="@drawable/rounded_edittext" />
+
+                <EditText
+                    android:id="@+id/bebes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:hint="Bebés"
+                    android:background="@drawable/rounded_edittext" />
+            </LinearLayout>
+
+            <!-- Checkbox -->
+            <CheckBox
+                android:id="@+id/checkbox_millas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usa tus millas + dinero"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000" />
+
+            <!-- Botón de búsqueda -->
+            <Button
+                android:id="@+id/btn_buscar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="8dp"
+                android:text="@string/Vuelos"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:elevation="4dp">
+
+            <Button
+                android:id="@+id/footer_inicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_inicio"
+                android:text="Inicio"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_comprar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_comprar"
+                android:text="Comprar"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_mis_viajes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_trips"
+                android:text="Mis Viajes"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_notificaciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_notifications"
+                android:text="Notificaciones"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/footer_latam_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_latam_pass"
+                android:text="Latam Pass"
+                android:background="@android:color/transparent"
+                android:textColor="#000000"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo -->
+    <solid android:color="#F5F5F5" /> <!-- Color de fondo claro -->
+
+    <!-- Esquinas redondeadas -->
+    <corners android:radius="12dp" />
+
+    <!-- Borde -->
+    <stroke
+        android:width="2dp"
+        android:color="#CCCCCC" /> <!-- Borde gris claro -->
+
+    <!-- Padding interno -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp" />
+</shape>
